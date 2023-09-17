@@ -8,19 +8,24 @@ require('dotenv').config()
 
 const copyDir2root = function(srcDirName) {
 	try {
-    const files = fs.readdirSync(path.join(__dirname, srcDirName));
+    const sourceDir = path.join(__dirname, srcDirName);
+    const destDir = __dirname;
 
-    for (const file of files) {
-      const sourcePath = path.join(__dirname, srcDirName, file);
-      const destPath = path.join(__dirname, file);
+    const items = fs.readdirSync(sourceDir);
 
-      fs.copyFileSync(sourcePath, destPath);
-      console.log(`Copied ${file} to project root`);
+    for (const item of items) {
+      const sourcePath = path.join(sourceDir, item);
+      const destPath = path.join(destDir, item);
+
+      if (fs.statSync(sourcePath).isDirectory()) {
+        fs.renameSync(sourcePath, destPath);
+        console.log(`Moved directory ${item} to project root`);
+      }
     }
 
-    console.log('All files copied successfully');
+    console.log('All directories moved successfully');
   } catch (error) {
-    console.error('Error copying files:', error);
+    console.error('Error moving directories:', error);
   }
 }
 
