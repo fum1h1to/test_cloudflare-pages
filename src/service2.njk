@@ -1,0 +1,30 @@
+---
+permalink: "service2.html"
+---
+{% extends "./_layouts/base.njk" %}
+{% block content %}
+
+	<div id="main">
+
+		<article>
+
+			<h2>サービス名</h2>
+			<p>画面幅800px以下で左右ブロックとフッターメニューが非表示になります。その他のページでも同じようにしたい場合は、&lt;body class=&quot;s-n&quot;&gt;として下さい。逆に、全て表示していたいならこのclass指定を外しておいて下さい。<br>
+※フォーム用のhtmlにもこのスタイルが入っています。</p>
+
+			<figure>
+				<img src="./assets/images/sample1_big.jpg" alt="">
+			</figure>
+
+		</article>
+
+		<p>
+			<a href="javascript:history.back()">&lt;&lt; 前のページに戻る</a>
+		</p>
+
+	</div>
+	<!--/#main-->
+
+	{% include "./_includes/nav1.njk" %}
+
+{% endblock %}

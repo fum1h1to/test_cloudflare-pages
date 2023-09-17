@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>cloudflare pages test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="cloudflare pages test">
+		<link rel="stylesheet" href="./assets/css/style.css">
+		<link rel="stylesheet" href="./assets/css/slide.css">
+		<script type="text/javascript" src="./assets/js/openclose.js"></script>
+		<script type="text/javascript" src="./assets/js/fixmenu_pagetop.js"></script>
+	</head>
+
+	<body>
+		<div id="container">
+
+			<header>
+				<h1 id="logo">
+					<a href="index.html"><img src="./assets/images/logo.png" alt="SAMPLE COMPANY"></a>
+				</h1>
+				<div id="contact">
+					<p class="tel">TEL:00-0000-0000<span>受付：00:00〜00:00　定休日：水曜日</span></p>
+				</div>
+			</header>
+
+			<!--PC用（801px以上端末）メニュー-->
+			<nav id="menubar">
+				<ul>
+					<li>
+						<a href="index.html">ホーム<span>HOME</span></a>
+					</li>
+					<li>
+						<a href="company.html">会社概要<span>COMPANY</span></a>
+					</li>
+					<li>
+						<a href="service.html">製品紹介<span>SERVICE</span></a>
+					</li>
+					<li>
+						<a href="recruit.html">採用情報<span>RECRUIT</span></a>
+					</li>
+					<li>
+						<a href="link.html">リンク<span>STAFF</span></a>
+					</li>
+					<li>
+						<a href="contact.html">お問い合わせ<span>CONTACT</span></a>
+					</li>
+				</ul>
+			</nav>
+			<!--小さな端末用（800px以下端末）メニュー-->
+			<nav id="menubar-s">
+				<ul>
+					<li>
+						<a href="index.html">ホーム<span>HOME</span></a>
+					</li>
+					<li>
+						<a href="company.html">会社概要<span>COMPANY</span></a>
+					</li>
+					<li>
+						<a href="service.html">製品紹介<span>SERVICE</span></a>
+					</li>
+					<li>
+						<a href="recruit.html">採用情報<span>RECRUIT</span></a>
+					</li>
+					<li>
+						<a href="link.html">リンク<span>STAFF</span></a>
+					</li>
+					<li>
+						<a href="contact.html">お問い合わせ<span>CONTACT</span></a>
+					</li>
+				</ul>
+			</nav>
+
+			{% block mainvisual -%}{%- endblock %}
+
+			<div id="contents">
+				<div id="contents-in">
+					{% block content -%}{%- endblock %}
+				</div>
+				<!--/#contents-in-->
+				<div id="side">
+
+					<nav class="box1">
+						<h2>Contents</h2>
+						<ul class="submenu">
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav>
+						<h2>Contents</h2>
+						<ul class="submenu">
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+						</ul>
+						<ul class="submenu">
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+							<li>
+								<a href="#">メニューサンプル</a>
+							</li>
+						</ul>
+					</nav>
+
+					<p>
+						<a href="recruit.html"><img src="./assets/images/banner1.jpg" alt="採用情報" class="pc"></a>
+						<a href="recruit.html"><img src="./assets/images/banner1_sh.jpg" alt="採用情報" class="sh"></a>
+					</p>
+					<p>上のバナー画像は、801px以上の端末と800px以下とで画像２種類が切り替わります。<br>
+						<a href="company.html#banner">詳しい説明はこちら。</a>
+					</p>
+
+					<div>
+						<h2>ボックスの外も</h2>
+						<p>使えます。サンプルテキスト。サンプルテキスト。</p>
+					</div>
+
+				</div>
+				<!--/#side-->
+
+			</div>
+			<!--/#contents-->
+
+		</div>
+		<!--/#container-->
+
+		<footer>
+
+			<div id="footermenu">
+				<ul>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+					<li>
+						<a href="#">メニューサンプル</a>
+					</li>
+				</ul>
+			</div>
+			<!--/footermenu-->
+
+			<div id="copyright">
+				<small>Copyright&copy; <a href="index.html">SAMPLE COMPANY</a> All Rights Reserved.</small>
+				<span class="pr">
+					<a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a>
+				</span>
+			</div>
+
+		</footer>
+
+		<p class="nav-fix-pos-pagetop">
+			<a href="#">↑</a>
+		</p>
+
+		<!--小さな端末用（800px以下端末）メニュー-->
+		<script>
+			if (OCwindowWidth() <= 800) {
+				open_close("newinfo_hdr", "newinfo");
+			}
+		</script>
+
+		<!--メニュー開閉ボタン-->
+		<div id="menubar_hdr" class="close"></div>
+		<!--メニューの開閉処理条件設定　800px以下-->
+		<script>
+			if (OCwindowWidth() <= 800) {
+				open_close("menubar_hdr", "menubar-s");
+			}
+		</script>
+
+	</body>
+</html>

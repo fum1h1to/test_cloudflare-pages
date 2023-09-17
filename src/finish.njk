@@ -1,0 +1,28 @@
+---
+permalink: "finish.html"
+---
+{% extends "./_layouts/base.njk" %}
+{% block content %}
+
+	<div id="main">
+
+		<section>
+
+			<h2>送信完了</h2>
+
+			<!-- フォームの情報はここからです -->
+			<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
+				<input type="hidden" name="mode" value="finish"/>
+				<!-- 処理終了 -->
+				<p class="c">送信が完了しました。</p>
+			</form>
+			<!-- フォームの情報はここまでです -->
+
+		</section>
+
+	</div>
+	<!--/#main-->
+
+	{% include "./_includes/nav1.njk" %}
+
+{% endblock %}

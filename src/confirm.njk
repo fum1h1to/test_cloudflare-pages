@@ -1,0 +1,57 @@
+---
+permalink: "confirm.html"
+---
+{% extends "./_layouts/base.njk" %}
+{% block content %}
+
+	<div id="main">
+
+		<section>
+
+			<h2>確認画面</h2>
+
+			<!-- フォームの情報はここからです -->
+			<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
+				<input type="hidden" name="mode" value="confirm">
+				<table class="ta1">
+					<!--<tr><td colspan="2" class="auto"><strong>確認画面</strong></td></tr>-->
+					<!-- 入力／確認 -->
+					<!--<tr><th class="tamidashi" colspan="2">お問い合わせフォーム</th></tr>-->
+					<tr>
+						<th width="150">お名前<span style="color:red">※</span></th>
+						<td>
+							<input type="hidden" name="item1" value="<?php echo $form["item1"];?>">
+							<?php echo $form["item1"];?>
+						</td>
+					</tr>
+					<tr>
+						<th width="150">メールアドレス<span style="color:red">※</span></th>
+						<td>
+							<input type="hidden" name="item2" value="<?php echo $form["item2"];?>">
+							<?php echo $form["item2"];?>
+						</td>
+					</tr>
+					<tr>
+						<th>お問い合わせ内容<span style="color:red">※</span></th>
+						<td>
+							<input type="hidden" name="item3" value="<?php echo $form["item3"]; ?>">
+							<?php echo nl2br($form["item3"]);?>
+						</td>
+					</tr>
+				</table>
+				<div class="c">
+					<input type="submit" value="送信する">
+&nbsp;
+<input type="button" value="戻る" onClick="document.form1.mode.value='reinput';document.form1.submit()">
+				</div>
+			</form>
+			<!-- フォームの情報はここまでです -->
+
+		</section>
+
+	</div>
+	<!--/#main-->
+
+	{% include "./_includes/nav1.njk" %}
+
+{% endblock %}

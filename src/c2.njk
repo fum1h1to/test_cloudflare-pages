@@ -1,0 +1,94 @@
+---
+permalink: "c2.html"
+---
+
+{% extends "./_layouts/base.njk" %}
+{% block mainvisual %}
+	<!--スライドショー-->
+	<aside id="mainimg">
+		<img src="./assets/images/1.jpg" alt="" class="slide0">
+		<img src="./assets/images/1.jpg" alt="" class="slide1">
+		<img src="./assets/images/2.jpg" alt="" class="slide2">
+		<img src="./assets/images/3.jpg" alt="" class="slide3">
+	</aside>
+{% endblock %}
+
+{% block content %}
+	<div id="main">
+
+		<h2>２カラムサンプル</h2>
+		<p>&lt;body&gt;を&lt;body class=&quot;c2&quot;&gt;にすると当ページのように２カラムになります。mainとsubが残り、sideブロックが非表示になるスタイルです。sideブロックはhtml側には残っているので、２カラムのみで使う場合はhtml側からsideブロックタグを削除しておいて下さい。</p>
+		<p>既にclass指定が入っている場合は半角スペースを空けて続けて加えればOK。例：&lt;body class=&quot;sample <span class="color1">c2</span>&quot;&gt;<br>
+idが入っている場合は横にclassごと追加すればOK。例：&lt;body id=&quot;top&quot; <span class="color1">class=&quot;c2&quot;</span>&gt;</p>
+
+		<h2>左右のブロックを入れ替えたい場合</h2>
+		<p>cssフォルダのstyle.cssの、<br>
+#mainの「float: right;」を「float: left;」に、<br>
+#subの「float: left;」を「float: right;」にする。</p>
+
+		<section id="new">
+			<h2>更新情報・お知らせ</h2>
+			<dl>
+				<dt>2023/02/07</dt>
+				<dd>iPhone環境で、class=&quot;btn&quot;のついたボタンを見た場合に、中のテキストが見えなくなってしまう事があるようなので、とりあえず全てのhtmlからclass=&quot;btn&quot;を外しました。</dd>
+				<dt>2018/07/09</dt>
+				<dd>html,cssなど全面リニューアル。旧ファイルをご希望の方はお問い合わせ下さい。<span class="newicon">NEW</span></dd>
+				<dt>2014/05/30</dt>
+				<dd>tp_biz26公開。</dd>
+				<dt>20XX/00/00</dt>
+				<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+				<dt>20XX/00/00</dt>
+				<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+				<dt>20XX/00/00</dt>
+				<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+				<dt>20XX/00/00</dt>
+				<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+				<dt>20XX/00/00</dt>
+				<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+			</dl>
+			<p class="r">&raquo;&nbsp;<a href="#">過去ログ</a>
+			</p>
+		</section>
+
+		<section>
+
+			<h2>製品紹介</h2>
+
+			<div class="list">
+				<a href="service2.html">
+					<h4>製品名</h4>
+					<figure><img src="./assets/images/sample1.jpg" alt=""></figure>
+					<p>リンクがあると、ボックス右下に「→」マークが入ります。<br>
+サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</p>
+				</a>
+			</div>
+
+			<div class="list">
+				<a href="service2.html">
+					<h4>製品名</h4>
+					<figure><img src="./assets/images/sample1.jpg" alt=""></figure>
+					<p>リンクがあると、ボックス右下に「→」マークが入ります。<br>
+サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</p>
+				</a>
+			</div>
+
+			<div class="list">
+				<h4>製品名</h4>
+				<figure><img src="./assets/images/sample1.jpg" alt=""></figure>
+				<p>リンクなしタイプです。</p>
+			</div>
+
+			<div class="list">
+				<h4>製品名</h4>
+				<figure><img src="./assets/images/sample1.jpg" alt=""></figure>
+				<p>リンクなしタイプです。</p>
+			</div>
+
+		</section>
+
+	</div>
+	<!--/#main-->
+
+	{% include "./_includes/nav1.njk" %}
+
+{% endblock %}
