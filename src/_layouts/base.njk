@@ -272,6 +272,13 @@
 				<span class="pr">
 					<a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a>
 				</span>
+				<span>
+					{% if env.PRODUCT_MODE == "development" %}
+						開発環境
+					{% elif env.PRODUCT_MODE == "preview" %}
+						プレビュー環境
+					{% endif %}
+				</span>
 			</div>
 
 		</footer>

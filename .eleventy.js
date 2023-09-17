@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
 		copyDir2root('cloudflare-config');
 	}
 
+	eleventyConfig.addGlobalData('env', process.env);
   eleventyConfig.addWatchTarget('src/')
 	eleventyConfig.addPassthroughCopy('src/assets/')
 
