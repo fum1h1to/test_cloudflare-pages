@@ -1,0 +1,35 @@
+---
+permalink: "blog.html"
+---
+
+{% extends "./_layouts/base.njk" %}
+{% block content %}
+<div id="main">
+
+	<section>
+
+		<h2>ブログ</h2>
+		<p>
+			hi
+		</p>
+
+		{% for post in  collections.posts %}
+		<div class="list">
+			<a href="{{ post.url }}">
+				<p><span class="normalicon">{{ post.tag }}</span></p>
+				<h4>{{ post.title }} {% if post.new %}<span class="newicon">NEW</span>{% endif %}</h4>
+				{% if post.thumb_content and post.thumb_content !== "" %}
+				<div style="margin-top: 10px">{{ post.thumb_content | safe }}</div>
+				{% endif %}
+				<p><small>{{ post.date | dateToFormat("yyyy.MM.dd") }} | by {{ post.author }}</small></p>
+			</a>
+		</div>
+		{% endfor %}
+	</section>
+
+</div>
+<!--/#main-->
+
+{% include "./_includes/nav1.njk" %}
+
+{% endblock %}

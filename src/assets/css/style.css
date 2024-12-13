@@ -11,7 +11,7 @@ body {
 	padding: 0px;
 	color: #666;	/*全体の文字色*/
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
-	font-size: 15px;	/*文字サイズ*/
+	font-size: 16px;	/*文字サイズ*/
 	line-height: 2;		/*行間*/
 	background: #fff;	/*背景色*/
 	-webkit-text-size-adjust: none;
@@ -22,17 +22,16 @@ ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
 img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
-video {max-width: 100%;}
-iframe {width: 100%;}
+/*iframe {width: 100%;}*/
 
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
 a {
-	color: #666;	/*リンクテキストの色*/
+	color: #1e247e;	/*リンクテキストの色*/
 	transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
 }
 a:hover {
-	color: #0f1bb1;			/*マウスオン時の文字色*/
+	color: #3c6db6;			/*マウスオン時の文字色*/
 	text-decoration: none;	/*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
 }
 
@@ -47,15 +46,16 @@ a:hover {
 /*ヘッダー（ロゴが入った最上段のブロック）
 ---------------------------------------------------------------------------*/
 /*ヘッダーブロック*/
-header {
-	height: 100px;	/*高さ*/
-}
 /*ロゴ画像*/
 header #logo {
-	width: 300px;	/*ロゴ画像の幅*/
+	width: 625px;	/*ロゴ画像の幅*/
 	float: left;	/*左に回り込み*/
-	margin-top: 30px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
-	margin-left: 30px;	/*ロゴの左にあける余白。*/
+	margin-top: 16px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
+	margin-left: 24px;	/*ロゴの左にあける余白。*/
+}
+
+header #logo-s{
+	display: none;
 }
 
 /*ヘッダー右側の電話番号ブロック
@@ -87,6 +87,7 @@ header #logo {
 #menubar {
 	clear: both;overflow: hidden;
 }
+
 /*メニュー１個あたりの設定*/
 #menubar li {
 	float: left;	/*左に回り込み*/
@@ -122,6 +123,56 @@ header #logo {
 #menubar-s {display: none;}
 /*３本バーアイコンを表示させない*/
 #menubar_hdr {display: none;}
+
+/*iframe関係
+---------------------------------------------------------------------------*/
+/* PVセクションのiframe */
+#iframe-main {
+	width: 100%;
+	margin-top: 5px;
+}
+
+#iframe-wrapper-main {
+	position: relative;
+	padding-bottom: 42.55%;
+	height: 0;
+	overflow: hidden;
+}
+  
+#iframe-wrapper-main iframe {
+	position: absolute;
+	left:0;
+	transform-origin: 0 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* お知らせセクションのiframe */
+.iframe-info {
+	width: 80%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.iframe-wrapper-info {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.iframe-wrapper-info iframe {
+	position: absolute;
+	left:0;
+	transform-origin: 0 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* PC用画面サイズでは小さい端末用PVセクションを表示しない */
+#iframe-main-s {
+	display: none;
+}
 
 /*contents（３カラムを囲むブロック）
 ---------------------------------------------------------------------------*/
@@ -183,14 +234,42 @@ header #logo {
 	border-left: 3px solid #0f1bb1;	/*左の線の幅、線種、色*/
 	padding-left: 10px;				/*線とテキストとの余白*/
 }
+/*mainコンテンツのh4タグ設定*/
+#main h4 {
+	clear: both;
+	margin-bottom: 10px;
+	padding: 4px 15px;
+	font-weight: bold;
+}
 /*コンテンツの段落タグ設定*/
 #main p {
 	padding: 0px 15px 20px;	/*上、左右、下への余白*/
 }
 #main h2 + p,
-#main h3 + p {
+#main h3 + p,
+#main h4 + p {
 	margin-top: -10px;
 }
+
+#main ul {
+	list-style-type: disc;
+	padding-left: 40px;
+	padding-bottom: 15px;
+}
+
+#main figure {
+	text-align: center;
+}
+
+#main img {
+	width: 90%;		/*ブロックの幅*/
+	padding-bottom: 20px;
+}
+
+#main .div-content {
+	padding: 0px 15px 20px;
+}
+
 
 /*一覧ページの各ブロック
 ---------------------------------------------------------------------------*/
@@ -505,22 +584,42 @@ footer .pr {display: block;font-size: 80%;}
 }
 #copyright a {text-decoration: none;}
 
-/*トップページ内「更新情報・お知らせ」ブロック
+/*トップページ内「ブログ」ブロック
 ---------------------------------------------------------------------------*/
 /*ブロック全体の設定*/
-#new dl {
+#blog dl {
 	padding-left: 20px;
 	margin-bottom: 15px;
 }
 /*日付設定*/
-#new dt {
+#blog dt {
 	float: left;
 	width: 9em;
 	color: #0f1bb1;	/*文字色*/
 	letter-spacing: 0.1em;
 }
 /*記事設定*/
-#new dd {
+#blog dd {
+	padding-left: 9em;
+	border-bottom: 1px solid #eee;	/*下線の幅、線種、色*/
+}
+
+/*トップページ内「大会結果」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#result dl {
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+/*日付設定*/
+#result dt {
+	float: left;
+	width: 9em;
+	color: #0f1bb1;	/*文字色*/
+	letter-spacing: 0.1em;
+}
+/*記事設定*/
+#result dd {
 	padding-left: 9em;
 	border-bottom: 1px solid #eee;	/*下線の幅、線種、色*/
 }
@@ -566,9 +665,10 @@ footer .pr {display: block;font-size: 80%;}
 }
 /*ta1の左側ボックス*/
 .ta1 th {
-	width: 140px;	/*幅*/
+	width: 40px;	/*幅*/
 	text-align: center;	/*センタリング*/
 	font-weight: normal;
+	background-color: #e5e5e5;
 }
 /*左側ボックスに画像を入れた場合の設定*/
 .ta1 th img {
@@ -667,12 +767,12 @@ h2 span.option1, h2 span.option2 {
 	padding: 0px 5px;
 }
 
-/*NEWアイコン
+/*トップページのNEWアイコン
 ---------------------------------------------------------------------------*/
 .newicon {
 	background: #F00;	/*背景色*/
 	color: #FFF;		/*文字色*/
-	font-size: 70%;		/*文字サイズ*/
+	font-size: 70%;
 	line-height: 1.5;
 	padding: 2px 5px;
 	border-radius: 2px;
@@ -680,16 +780,16 @@ h2 span.option1, h2 span.option2 {
 	vertical-align: text-top;
 }
 
-/*UPアイコン
+/*グレーアイコン
 ---------------------------------------------------------------------------*/
-.upicon {
-	background: #0072ff;	/*背景色*/
-	color: #FFF;		/*文字色*/
+.normalicon {
+	background: #dadada;	/*背景色*/
+	color: #000;		/*文字色*/
 	font-size: 70%;
 	line-height: 1.5;
 	padding: 2px 5px;
 	border-radius: 2px;
-	margin: 0px 5px;
+	margin: 0px;
 	vertical-align: text-top;
 }
 
@@ -722,10 +822,16 @@ img.fl {float: left;margin-right: 10px;margin-bottom: 10px;}
 /*ヘッダー（ロゴが入った最上段のブロック）
 ---------------------------------------------------------------------------*/
 /*ロゴ画像*/
-header #logo {
-	width: 250px;		/*ロゴ画像の幅*/
-	margin-top: 36px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
+header #logo-s {
+	display: block;
+	width: 260px;		/*ロゴ画像の幅*/
+	margin-top: 14px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
 	margin-left: 0px;	/*ロゴの左にあける余白。*/
+	margin-bottom: 16px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
+}
+
+header #logo{
+	display: none;
 }
 
 /*ヘッダー右側の電話番号ブロック
@@ -754,6 +860,7 @@ header #logo {
 	animation-duration: 0.5S;	/*アニメーションの実行時間。0.5秒。*/
 	animation-fill-mode: both;	/*アニメーションの完了後、最後のキーフレームを維持する*/
 }
+
 /*メニュー１個あたりの設定*/
 #menubar-s li a {
 	display: block;text-decoration: none;
@@ -770,6 +877,35 @@ header #logo {
 }
 /*PC用メニューを非表示にする*/
 #menubar {
+	display: none;
+}
+
+/*iframe関係
+---------------------------------------------------------------------------*/
+#iframe-main-s {
+	display: none;
+	width: 100%;
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+
+#iframe-wrapper-s {
+	position: relative;
+	padding-bottom: 42.55%;
+	height: 0;
+	overflow: hidden;
+}
+  
+#iframe-wrapper-s iframe {
+	position: absolute;
+	left:0;
+	transform-origin: 0 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* PC用PVセクションを表示させない */
+#iframe-main {
 	display: none;
 }
 
@@ -791,11 +927,11 @@ header #logo {
 }
 /*三本バーアイコン*/
 #menubar_hdr.close {
-	background: #fff url(../images/icon_menu.png) no-repeat center top/50px;
+	background: #fff url(../imgs/icon_menu.png) no-repeat center top/50px;
 }
 /*閉じるアイコン*/
 #menubar_hdr.open {
-	background: #fff url(../images/icon_menu.png) no-repeat center bottom/50px;
+	background: #fff url(../imgs/icon_menu.png) no-repeat center bottom/50px;
 }
 
 /*contents（３カラムを囲むブロック）
@@ -835,15 +971,15 @@ body.s-n #sub,body.s-n #side,body.s-n #footermenu {display: none;}
 /*全体の設定
 ---------------------------------------------------------------------------*/
 body {
-	font-size: 12px;	/*文字サイズ*/
-	line-height: 1.5;	/*行間*/
+	font-size: 14px;	/*文字サイズ*/
+	line-height: 1.8;	/*行間*/
 }
 
 /*mainコンテンツ（中央のブロック）
 ---------------------------------------------------------------------------*/
 /*mainコンテンツのh2,h3タグ設定*/
 #main h2, #main h3 {
-	font-size: 14px;	/*文字サイズ*/
+	font-size: 15px;	/*文字サイズ*/
 }
 
 /*一覧ページの各ブロック
@@ -876,7 +1012,7 @@ body {
 ---------------------------------------------------------------------------*/
 /*テーブル内の左側*/
 .ta1 th {
-	width: 100px;
+	width: 40px;
 	padding: 5px;
 }
 /*テーブル内の右側*/
@@ -896,8 +1032,6 @@ img.fr,img.fl {float: none;margin: 0;width: 100%;}
 
 }
 
-
-
 /*画面幅350px以下の設定
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width:350px){
@@ -905,9 +1039,9 @@ img.fr,img.fl {float: none;margin: 0;width: 100%;}
 /*ヘッダー（ロゴが入った最上段のブロック）
 ---------------------------------------------------------------------------*/
 /*ロゴ画像*/
-header #logo {
-	width: 200px;		/*ロゴ画像の幅*/
-	margin-top: 38px;	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
-}
+/*header #logo {*/
+/*	width: 200px;*/		/*ロゴ画像の幅*/
+/*	margin-top: 32px;*/	/*ロゴの上にあける余白。上下のバランスをここで調整して下さい。*/
+/*}*/
 
 }

@@ -1,0 +1,21 @@
+[
+    {
+        "title": "test",
+        "content": "<p>test</p>",
+        "thumb_content": "",
+        "author": "test",
+        "date": "2024-07-15",
+        "tag": "test",
+        "new": true
+    },
+    {
+        "title": "test2",
+        "content": "",
+        "thumb_content": "<p>test2</p>",
+        "url": "/link.html",
+        "author": "test2",
+        "date": "2024-03-30",
+        "tag": "test2",
+        "new": false
+    }
+]

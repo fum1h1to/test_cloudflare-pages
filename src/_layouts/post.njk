@@ -1,0 +1,23 @@
+{% extends "./base.njk" %}
+{% block content %}
+<div id="main">
+
+	<section>
+        <h2>{{ title }}</h2>
+        <div>
+            <p>
+                <span class="normalicon" style="vertical-align: baseline">{{ post.tag }}</span><small> | {{ post.date | dateToFormat("yyyy.MM.dd") }} | by {{ post.author }}</small>
+            </p>
+            {{ content | safe }}
+        </div>
+        <p>
+            <a href="/blog.html">&laquo;&nbsp; ブログトップに戻る</a>
+        </p>
+	</section>
+
+</div>
+<!--/#main-->
+
+{% include "../_includes/nav1.njk" %}
+
+{% endblock %}

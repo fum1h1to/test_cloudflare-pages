@@ -34,8 +34,11 @@
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 #mainimg {
-	clear: left;width: 100%;position: relative;
+	clear: left;
+	width: 100%;
+	position: relative;
 	margin-top: 15px;	/*メインメニューとスライドショーとの間にとるスペース*/
+	display: none;
 }
 /*３枚画像の共通設定*/
 .slide1,.slide2,.slide3 {
@@ -72,7 +75,8 @@
 ---------------------------------------------------------------------------*/
 /*画像ブロック*/
 #mainimg {
-	margin-top: 0;
+	display: block;
+	margin-top: 14px;
 	margin-bottom: 20px;
 }
 

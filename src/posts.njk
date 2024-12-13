@@ -1,0 +1,11 @@
+---
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+permalink: "posts/{{ post.slug }}/"
+layout: post.njk
+eleventyComputed:
+  title: "{{ post.title }}"
+---
+{{ post.content | safe }}
