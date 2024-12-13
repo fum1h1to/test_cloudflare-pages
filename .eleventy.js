@@ -1,10 +1,18 @@
 const { resolve } = require('path');
 const fs = require('fs');
+const dotenv = require('dotenv')
 
 const beautify = require('js-beautify');
 const htmlmin = require("html-minifier");
 const crypto = require('crypto');
 const { DateTime } = require('luxon');
+
+const { createClient } = require('microcms-js-sdk');
+
+dotenv.config();
+const MICRO_CMS_DOMAIN = process.env.MICRO_CMS_DOMAIN;
+const MICRO_CMS_APIKEY = process.env.MICRO_CMS_APIKEY;
+const posts = [];
 
 function createHash(text) {
 	const uint8 = new TextEncoder().encode(text)
@@ -23,6 +31,32 @@ module.exports = function (eleventyConfig) {
 			console.log(`Deleted ${outputPath}`);
 		}
 
+		const client = createClient({
+			serviceDomain: MICRO_CMS_DOMAIN, // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+			apiKey: MICRO_CMS_APIKEY,
+			retry: true // Retry attempts up to a maximum of two times.
+		});
+
+		await client.getList({
+			endpoint: 'blog',
+			})
+			.then((res) =>{
+				console.log(res);
+				res.contents.map((post, index) => {
+					posts.push({
+						title: post.title,
+						content: post.content == null ? null : post.content,
+						thumb_content: post.sub_title == null ? null : post.sub_title,
+						url: post.url == null ? null : post.url,
+						author: post.author,
+						date: post.publish_date,
+						tag: post.type[0],
+						new: index == 0 ? true : false
+					});
+				})
+
+			})
+	
 	});
 
 	eleventyConfig.addFilter("dateToFormat", function (date, format) {
@@ -38,8 +72,6 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addCollection("posts", function (collectionApi) {
-		const posts = collectionApi.getAll()[0].data.posts;
-    
 		posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 		return posts.map((post, index) => ({
@@ -52,8 +84,6 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addCollection("recentPosts", function (collectionApi) {
-		const posts = collectionApi.getAll()[0].data.posts;
-    
 		posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 		return posts.slice(0, 5).map((post) => ({
